@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+, <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 標楷體;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* 棋盤 */
+        .button-box {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            width: 820px;
+            height: 900px;
+            border: 1px solid black;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+
+
+        .small {
+            width: 87.5px;
+            height: 87.5px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .small2 {
+            width: 110px;
+            height: 87.5px;
+            font-size: 50px;
+            line-height: 87.5px;
+            text-align: center;
+        }
+
+        #bg-row {
+            width: 700px;
+            color: black;
+        }
+
+        /* -------------------------------------------------------------------------------------------------- */
+        /* 棋盤上方旗子 */
+        .top-box {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            width: 820px;
+            height: 900px;
+            border: 1px solid black;
+            padding: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+            z-index: 1;
+        }
+
+        .top {
+            width: 820px;
+            height: 410px;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .button {
+            width: 820px;
+            height: 410px;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+
+        .top-row {
+            height: 65px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .curcle {
+            width: 65px;
+            height: 65px;
+            background-color: white;
+            border-radius: 50%;
+            border: black 1px solid;
+            text-align: center;
+            font-size: 45px;
+            line-height: 65px;
+        }
+
+        .bottun-row {
+            height: 65px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .curcle1 {
+            width: 65px;
+            height: 65px;
+            background-color: white;
+            border-radius: 50%;
+            border: black 1px solid;
+            text-align: center;
+            font-size: 45px;
+            line-height: 65px;
+            color: red;
+        }
+
+        /* ------------------------------------------------------ */
+        /* 棋盤外文字 */
+        .button-box::before {
+            content: "圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑";
+            font-size: 45px;
+            position: absolute;
+            top: -20px;
+            right: 0;
+            bottom: -20px;
+            left: 850px;
+            writing-mode: vertical-lr;
+        }
+
+        .top-box::after {
+            content: "棋盤裡，車無輪，馬無韁，叫聲將軍提防提防";
+            font-size: 45px;
+            position: absolute;
+            top: -20px;
+            right: 0;
+            bottom: -20px;
+            left: -80px;
+            writing-mode: vertical-lr;
+    </style>
+</head>
+
+<body>
+    <div class="top-box">
+        <div class="top">
+            <div class="top-row">
+                <div class="curcle">車</div>
+                <div class="curcle">馬</div>
+                <div class="curcle">象</div>
+                <div class="curcle">士</div>
+                <div class="curcle">將</div>
+                <div class="curcle">士</div>
+                <div class="curcle">象</div>
+                <div class="curcle">馬</div>
+                <div class="curcle">車</div>
+            </div>
+            <div class="top-row"></div>
+            <div class="top-row">
+                <div class="curcle" style="opacity: 0;">卒</div>
+                <div class="curcle">包</div>
+                <div class="curcle" style="opacity: 0;">卒</div>
+                <div class="curcle">包</div>
+                <div class="curcle" style="opacity: 0;">卒</div>
+            </div>
+            <div class="top-row">
+                <div class="curcle">卒</div>
+                <div class="curcle">卒</div>
+                <div class="curcle">卒</div>
+                <div class="curcle">卒</div>
+                <div class="curcle">卒</div>
+            </div>
+            <div class="top-row"></div>
+        </div>
+
+        <div class="button">
+            <div class="bottun-row">
+                <div class="curcle1">俥</div>
+                <div class="curcle1">傌</div>
+                <div class="curcle1">相</div>
+                <div class="curcle1">仕</div>
+                <div class="curcle1">帥</div>
+                <div class="curcle1">仕</div>
+                <div class="curcle1">相</div>
+                <div class="curcle1">傌</div>
+                <div class="curcle1">俥</div>
+            </div>
+            <div class="bottun-row"></div>
+            <div class="bottun-row">
+                <div class="curcle1" style="opacity: 0;"></div>
+                <div class="curcle1">炮</div>
+                <div class="curcle1" style="opacity: 0;">卒</div>
+                <div class="curcle1">炮</div>
+                <div class="curcle1" style="opacity: 0;">卒</div>
+            </div>
+            <div class="bottun-row">
+                <div class="curcle1">兵</div>
+                <div class="curcle1">兵</div>
+                <div class="curcle1">兵</div>
+                <div class="curcle1">兵</div>
+                <div class="curcle1">兵</div>
+            </div>
+            <div class="bottun-row"></div>
+        </div>
+    </div>
+    <div class="button-box">
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small" style="background:linear-gradient(45deg,white 49%,black 50%,white 51%)" ;></div>
+        <div class="small" style="background:linear-gradient(-45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small" style="background:linear-gradient(-45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small" style="background:linear-gradient(45deg,white 49%,black 50%,white 51%)"></div>
+        <div class=" small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div id="bg-row" class="small">
+            <div class="small2">楚河</div>
+            <div class="small2">漢界</div>
+        </div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small" style="background:linear-gradient(45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small" style="background:linear-gradient(-45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small" style="background:linear-gradient(-45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small" style="background:linear-gradient(45deg,white 49%,black 50%,white 51%)"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+    </div>
+
+</body>
+
+</html>
